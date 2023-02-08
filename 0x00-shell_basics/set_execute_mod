@@ -3,5 +3,12 @@
 read filename
 
 chmod u+x $filename
+git add .
+git commit -m " $filename task script done "
+git push
 
-echo Changes done successfully
+echo Work done successfully
+
+
+
+
