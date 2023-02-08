@@ -1,1 +1,1 @@
-This directory contains a script that gives the current directory's path
+This directory contains the script for the shell basics project tasks
