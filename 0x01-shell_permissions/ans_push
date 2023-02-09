@@ -1,6 +1,6 @@
 #!/bin/bash
 
-while [ $filename != "done" ]
+while [ "$filename" != "done" ]
 do
  echo "Enter a filename"
  read filename
