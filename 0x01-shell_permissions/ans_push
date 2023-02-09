@@ -8,7 +8,7 @@ do
  echo "Enter the answer to the task"
  read answer
 
- $answer >> $filename
+ echo "$answer" >> $filename
 
  git add .
  git commit -m "$filename script done"
