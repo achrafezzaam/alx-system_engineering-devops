@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while [ "$input" != "done" ]
+do
+ echo "Enter a filename"
+ read input
+ echo "#!/bin/bash" > $input
+ chmod u+x $input
+ echo "File created successfully"
+done
