@@ -56,4 +56,24 @@
 - All your scripts must be executable. To make your file executable, use the **chmod** command: **chmod u+x file**. Later, we’ll learn more about how to utilize this command.
 # Tasks
 | Script | Description |
+| ------ | ----------- |
 | [0-current_working_directory](./0-current_working_directory) | Print the absolute path name of the current working directory. |
+| [1-listit](./1-listit) | Display the contents list of your current directory. |
+| [2-bring_me_home](./2-bring_me_home) | Change the working directory to the user’s home directory |
+| [3-listfiles](./3-listfiles) | Display current directory contents in a long format. |
+| [4-listmorefiles](./4-listmorefiles) | Display current directory contents, including hidden files. Long format |
+| [5-listfilesdigitonly](./5-listfilesdigitonly) |  |
+| [6-firstdirectory](./6-firstdirectory) |  |
+| [7-movethatfile](./7-movethatfile) |  |
+| [8-firstdelete](./8-firstdelete) |  |
+| [9-firstdirdeletion](./9-firstdirdeletion) |  |
+| [10-back](./10-back) |  |
+| [11-lists](./11-lists) |  |
+| [12-file_type](./12-file_type) |  |
+| [13-symbolic_link](./13-symbolic_link) |  |
+| [14-copy_html](./14-copy_html) |  |
+| [100-lets_move](./100-lets_move) |  |
+| [101-clean_emacs](./101-clean_emacs) |  |
+| [102-tree](./102-tree) |  |
+| [103-commas](./103-commas) |  |
+| [school.mgc](./school.mgc) |  |
