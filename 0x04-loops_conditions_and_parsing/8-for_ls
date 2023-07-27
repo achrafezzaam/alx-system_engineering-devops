@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+files=$(ls)
+for elem in $files
+do
+	echo "${elem##*-}"
+done
