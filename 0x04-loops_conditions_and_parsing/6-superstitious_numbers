@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Loop form 1 to 20. Display bad luck from China, bad luck from Japan and bad luck from Italy on the 4th, 9th and 17th iteration respectively and the iteration number for other iterations
 i=1
 while [ $i -le 20 ]
 do

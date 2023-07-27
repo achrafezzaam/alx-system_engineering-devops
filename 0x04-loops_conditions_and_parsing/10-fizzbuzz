@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#Iterate from 1 to 100. Display Fizz if the iteration is divisible by 3, Buzz if it's divisible by 5, FizzBuzz if both otherwise displays the iteration number.
 i=1
 while [ $i -le 100 ]
 do
