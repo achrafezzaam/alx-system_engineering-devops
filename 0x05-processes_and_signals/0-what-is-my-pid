@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#Get the current script's process id
+echo $$
