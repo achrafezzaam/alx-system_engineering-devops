@@ -5,11 +5,11 @@ include stdlib
 file_line { 'file _identity':
   ensure  => present,
   path    => '/etc/ssh/ssh_config',
-  line    => '\tIdentityFile ~/.ssh/school',
+  line    => '    IdentityFile ~/.ssh/school',
 }
 
 file_line { 'authentication':
   ensure  => present,
   path    => '/etc/ssh/ssh_config',
-  line    => '\tPasswordAuthentication no',
+  line    => '    PasswordAuthentication no',
 }
