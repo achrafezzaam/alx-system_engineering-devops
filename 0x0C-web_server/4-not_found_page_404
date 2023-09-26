@@ -1,35 +1,20 @@
 #!/usr/bin/env bash
-# Configuring the Nginx server to have a custom 404 page
-# that contains the string Ceci n'est pas une page
-apt-get update
-apt-get install -y nginx
+# Configuring the Nginx server so that /redirect_me
+# is redirecting to another page
+sudo apt-get update
+sudo apt-get install -y nginx
 sudo ufw allow 'Nginx HTTP'
 mkdir -p /var/www/html
 sudo chmod -R 755 /var/www
-sudo echo 'Hello World!' | tee /var/www/html/index.html
-old_string=\
-"
-	location / {
-		try_files \$uri \$uri/ =404;
-	}
-"
-new_string=\
-"
-	location / {
-		try_files \$uri \$uri/ =404;
-	}
-	
-	error_page 404 /404.html;
-	location /404.html {
-		root /var/www/html;
-		internal;
-	}
-"
-sudo echo "Ceci n'est pas une page" | tee /var/www/html/404.html
-sed -i "s/$old_string/$new_string/" /etc/nginx/sites-enabled/default
+echo 'Hello World!' | sudo tee /var/www/html/index.html
+old_string="try_files \\\$uri \\\$uri\/ =404;"
+new_string="try_files \\\$uri \\\$uri\/ =404;\n\t}\n\n\terror_page 404 /404.html;\n\tlocation /404.html {\n\t\troot /var/www/html;\n\t\tinternal;\t"
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+file='/etc/nginx/sites-enabled/default'
+sudo sed -i '0,/'"$old_string"'/{s//'"$new_string"'/}' "$file"
 if [ "$(pgrep -c nginx)" -le 0 ];
 then
-	service nginx start;
+        sudo service nginx start;
 else
-	service nginx restart;
+        sudo service nginx restart;
 fi
