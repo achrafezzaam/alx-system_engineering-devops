@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# Install Nginx and setting the responce for / calls to Hello world!
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo ufw allow "Nginx HTTP"
+sudo chown -R "$USER":"$USER" /var/www/html/index.html
+sudo echo 'Hello World!' | tee /var/www/html/index.html
+sudo service nginx restart
