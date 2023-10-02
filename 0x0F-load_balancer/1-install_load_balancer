@@ -5,17 +5,6 @@ sudo apt-get install --no-install-recommends software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-2.0
 sudo apt-get install haproxy=2.0.\*
 sudo sed -i "8 a\ENABLED=1\n" /etc/default/haproxy
-LOAD_BALANCER=\
-"
-frontend my_frontend
-	bind	0.0.0.0:80
-	mode	http
-	default_backend	my_servers
-	
-backend my_servers
-	balance	roundrobin
-	server	224887-web-01	54.144.197.160:80
-	server	224887-web-02	100.26.218.107:80
-"
-sudo sed -i "$ a\ $LOAD_BALANCER" /etc/haproxy/haproxy.cfg
+LOAD_BALANCER="\nfrontend my_frontend\n\tbind\t0.0.0.0:80\n\tmode\thttp\n\tdefault_backend my_servers\n\nbackend my_servers\n\tbalance\troundrobin\n\tserver\t224887-web-01\t54.144.197.160:80\n\tserver\t224887-web-02\t100.26.218.107:80\n"
+sudo sed -i "$ a\\$LOAD_BALANCER" /etc/haproxy/haproxy.cfg
 sudo service haproxy start
