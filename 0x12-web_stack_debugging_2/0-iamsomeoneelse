@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Run the whoami command under the user given as an argument
+su -c "$1"
+whoami
