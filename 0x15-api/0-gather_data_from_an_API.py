@@ -8,8 +8,8 @@ if __name__ == '__main__':
     username = requests.get(url).json()
     todos = requests.get(url + '/todos').json()
     finished = [todo for todo in todos if todo['completed']]
-    print('Employee {} is done with tasks({}/{})'.format(username["name"],
-                                                         len(finished),
-                                                         len(todos)))
+    print('Employee {} is done with tasks({}/{}):'.format(username["name"],
+                                                          len(finished),
+                                                          len(todos)))
     for todo in finished:
         print('\t {}'.format(todo['title']))
