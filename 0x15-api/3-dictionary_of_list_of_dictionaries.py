@@ -8,8 +8,8 @@ if __name__ == '__main__':
     users = requests.get(url).json()
     new = {}
     for user in users:
-        user_url = 'https://jsonplaceholder.typicode.com/users/{}'
-        .format(user["id"])
+        user_url = 'https://jsonplaceholder.typicode.com/users/{}'.format(
+                    user["id"])
         todos = requests.get(user_url + '/todos').json()
         todos_list = []
         for todo in todos:
