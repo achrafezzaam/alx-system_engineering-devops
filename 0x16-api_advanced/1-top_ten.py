@@ -10,7 +10,7 @@ def top_ten(subreddit):
     params = {"limit": 10}
     headers = {"User-Agent": "4ZfPk/maXs5rww=="}
     res = requests.get(url, headers=headers,
-                            params=params, allow_redirects=False)
+                       params=params, allow_redirects=False)
     if res.status_code == 404:
         print("None")
         return
